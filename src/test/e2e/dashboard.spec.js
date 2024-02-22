@@ -1,5 +1,5 @@
 import { BASE_URL } from "../../core/helpers/utils";
-import dashboard from "../../core/pom/pages/dashBoard";
+import { dashboard } from "../../core/pom/pages/dashBoard";
 
 fixture`Dashboard`.page`${BASE_URL}`;
 

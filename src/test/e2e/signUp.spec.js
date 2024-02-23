@@ -4,7 +4,7 @@ import {
   uniqueLastName,
   uniqueEmail,
   uniquePassword,
-  invalidEmail,
+  duplicateEmail,
 } from "../../core/helpers/utils";
 import signUp from "../../core/pom/pages/signUp";
 
@@ -34,16 +34,16 @@ test("Create an account with valid user info", async (t) => {
     uniquePassword
   );
   //see successful msg
-  await t.expect(signUp.seeSuccessMsg).contains(successfullMsg);
+  await t.expect(await signUp.seeSuccessMsg()).contains(successfullMsg);
 });
 
 test("Create an account with Duplicate user info", async (t) => {
   await signUp.createAccount(
     uniqueFirstname,
     uniqueLastName,
-    invalidEmail,
+    duplicateEmail,
     uniquePassword
   );
   //see error msg warming duplicated email
-  await t.expect(signUp.seeErrorMsg).contains(errorMsg);
+  await t.expect(await signUp.seeErrorMsg()).contains(errorMsg);
 });

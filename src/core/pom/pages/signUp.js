@@ -11,8 +11,8 @@ class SignUp {
     this.password = Selector("#password");
     this.confirmation = Selector("#password-confirmation");
     this.createAccountButton = Selector(".action.submit.primary");
-    this.successMsg = Selector("#message-success");
-    this.errorMsg = Selector("#message-error");
+    this.successMsg = Selector(".message-success");
+    this.errorMsg = Selector(".message-error");
   }
 
   async createAccount(firstName, lastName, email, password) {
@@ -25,10 +25,10 @@ class SignUp {
       .click(this.createAccountButton);
   }
   async seeSuccessMsg() {
-    return this.successMsg.message;
+    return await this.successMsg.innerText;
   }
   async seeErrorMsg() {
-    return this.errorMsg.message;
+    return await this.errorMsg.innerText;
   }
 }
 

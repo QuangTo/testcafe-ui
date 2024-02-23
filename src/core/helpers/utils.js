@@ -5,5 +5,4 @@ export const uniqueFirstname = faker.person.firstName();
 export const uniqueLastName = faker.person.lastName();
 export const uniqueEmail = faker.internet.email();
 export const duplicateEmail = "qt123@gmail.com";
-export const uniqueUserName = faker.internet.userName();
-export const uniquePassword = faker.internet.password();
+export const uniquePassword = faker.internet.password({ mode: "secure" });

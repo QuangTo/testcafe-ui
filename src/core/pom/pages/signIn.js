@@ -1,7 +1,7 @@
 import { Selector, t } from "testcafe";
 class SignIn {
   constructor() {
-    this.hasTitle = Selector(".base").withAttribute(
+    this.title = Selector(".base").withAttribute(
       "data-ui-id",
       "page-title-wrapper"
     );

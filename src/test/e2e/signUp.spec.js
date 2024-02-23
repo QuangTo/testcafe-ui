@@ -7,14 +7,14 @@ import {
   duplicateEmail,
 } from "../../core/helpers/utils";
 import signUp from "../../core/pom/pages/signUp";
-
-const singUpTitle = "Create New Customer Account";
-const successfullMsg = "Thank you for registering with Main Website Store.";
-const errorMsg = "There is already an account with this email address.";
+import ProductText from "../data_test/productText";
 
 fixture`Sign In`.page`${BASE_URL}/customer/account/create`;
+
 test("Navigate sign up Page", async (t) => {
-  await t.expect(signUp.hasTitle.withText(singUpTitle).visible).ok();
+  await t
+    .expect(signUp.hasTitle.withText(ProductText.signUpPageTitle).visible)
+    .ok();
 });
 
 test("Verify Sign Up form", async (t) => {
@@ -34,10 +34,12 @@ test("Create an account with valid user info", async (t) => {
     uniquePassword
   );
   //see successful msg
-  await t.expect(await signUp.seeSuccessMsg()).contains(successfullMsg);
+  await t
+    .expect(await signUp.seeSuccessMsg())
+    .contains(ProductText.signUpSuccessfullMsg);
 });
 
-test("Create an account with Duplicate user info", async (t) => {
+test("Create an account with Duplicated user info", async (t) => {
   await signUp.createAccount(
     uniqueFirstname,
     uniqueLastName,
@@ -45,5 +47,7 @@ test("Create an account with Duplicate user info", async (t) => {
     uniquePassword
   );
   //see error msg warming duplicated email
-  await t.expect(await signUp.seeErrorMsg()).contains(errorMsg);
+  await t
+    .expect(await signUp.seeErrorMsg())
+    .contains(ProductText.signUpErrorMsg);
 });

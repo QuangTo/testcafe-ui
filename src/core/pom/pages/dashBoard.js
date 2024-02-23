@@ -7,7 +7,7 @@ class Dashboard {
       "page-title-wrapper"
     );
     this.commercialImage = Selector(".block-promo").find("img");
-    this.shopYogaButton = Selector("span").withExactText("Shop New Yoga");
+    this.shopYogaButton = Selector(".action.more.button");
   }
 }
 

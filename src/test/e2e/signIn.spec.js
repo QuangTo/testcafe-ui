@@ -1,7 +1,7 @@
-import signIn from "../../core/pom/pages/signIn";
-import ProductText from "../data_test/productText";
+import signIn from "../../core/page-model/pages/signIn";
+import ProductText from "../data-test/productText";
 import { BASE_URL } from "../../core/helpers/utils";
-import { Credentials } from "../data_test/credentials";
+import { Credentials } from "../data-test/credentials";
 
 fixture`Sign In`.page`${BASE_URL}/customer/account/login`;
 

@@ -6,8 +6,8 @@ import {
   uniquePassword,
   duplicateEmail,
 } from "../../core/helpers/utils";
-import signUp from "../../core/pom/pages/signUp";
-import ProductText from "../data_test/productText";
+import signUp from "../../core/page-model/pages/signUp";
+import ProductText from "../data-test/productText";
 
 fixture`Sign In`.page`${BASE_URL}/customer/account/create`;
 

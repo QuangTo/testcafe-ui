@@ -1,6 +1,6 @@
 import { BASE_URL } from "../../core/helpers/utils";
-import dashboard from "../../core/pom/pages/dashBoard";
-import ProductText from "../data_test/productText";
+import dashboard from "../../core/page-model/pages/dashBoard";
+import ProductText from "../data-test/productText";
 
 fixture`Dashboard`.page`${BASE_URL}`;
 
